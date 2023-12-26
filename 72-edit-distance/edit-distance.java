@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     int dp[][];
     public int solve(int i,int j,String s1,String s2){
         if(i<0)
@@ -27,5 +27,34 @@ class Solution {
             }
         }
         return solve(word1.length()-1,word2.length()-1,word1,word2);
+    }
+}
+
+class Solution {
+    public int minDistance(String s1, String s2) {
+        int dp[][]=new int[s1.length()+1][s2.length()+1];
+        for(int i=0;i<s1.length()+1;i++){
+            for(int j=0;j<s2.length()+1;j++){
+                if(i==0)
+                dp[i][j]=j;
+                if(j==0){
+                    dp[i][j]=i;
+                }
+            }
+        }
+        for(int i=1;i<s1.length()+1;i++){
+            for(int j=1;j<s2.length()+1;j++){
+                if(s1.charAt(i-1)==s2.charAt(j-1)){
+                    dp[i][j]=dp[i-1][j-1];
+                }
+                else{
+                    int del=1+dp[i-1][j];
+                    int ins=1+dp[i][j-1];
+                    int rep=1+dp[i-1][j-1];
+                    dp[i][j]=Math.min(del,Math.min(ins,rep));
+                }
+            }
+        }
+        return dp[s1.length()][s2.length()];
     }
 }
