@@ -1,3 +1,4 @@
+//DP approach
 class Solution1 {
     int dp[][];
     public int solve(String s1,String s2,int i,int j){
@@ -26,10 +27,10 @@ class Solution1 {
     }
 }
 
+//BottomUP Approach
 class Solution {
     public int longestPalindromeSubseq(String s1) {
-        StringBuilder str=new StringBuilder();
-        str.append(s1);
+        StringBuilder str=new StringBuilder(s1);
         str.reverse();
         String s2=str.toString();
         int dp[][]=new int[s1.length()+1][s2.length()+1];
