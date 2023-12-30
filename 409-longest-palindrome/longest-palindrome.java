@@ -13,7 +13,7 @@ class Solution {
         for(Map.Entry<Character,Integer> entry: map.entrySet()){
             int t=entry.getValue();
             ans+=(t/2)*2;
-            if(flag==0&&t%2==1){
+            if(flag==0&&t%2!=0){
                 ans+=1;
                 flag=1;
             }
