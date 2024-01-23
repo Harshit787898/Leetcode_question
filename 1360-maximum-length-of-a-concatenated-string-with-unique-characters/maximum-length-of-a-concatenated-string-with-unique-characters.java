@@ -1,15 +1,16 @@
 class Solution {
-    private int backtrack(List<String> arr, int index, String current) {
-        int maxLen = current.length();
-
-        for (int i = index; i < arr.size(); i++) {
-            if (isValid(arr.get(i), current)) {
-                String newString = current + arr.get(i);
-                maxLen = Math.max(maxLen, backtrack(arr, i + 1, newString));
-            }
+    private int backtrack(List<String> arr, int i, String t) {
+        if (i == arr.size()) {
+            return t.length();
+        }
+        int nottake= backtrack(arr, i + 1,t);
+        if (isValid(arr.get(i),t)) {
+            String s = t + arr.get(i);
+            int take = backtrack(arr, i + 1,s);
+            return Math.max(take,nottake);
         }
 
-        return maxLen;
+        return nottake;
     }
     public boolean isValid(String s1,String s2){
         HashSet<Character> set=new HashSet<>();
