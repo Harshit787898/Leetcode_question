@@ -18,8 +18,6 @@ class Solution {
         }
         if(t<2)
         return -1;
-        else{
-            return s[t];
-        }
+        return s[t];
     }
 }
