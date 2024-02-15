@@ -13,11 +13,9 @@ class Solution {
                 break;
             }
         }
-        if(t==Integer.MAX_VALUE){
+        if(t==Integer.MAX_VALUE||t<2){
             return -1;
         }
-        if(t<2)
-        return -1;
         return s[t];
     }
 }
