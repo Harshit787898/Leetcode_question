@@ -16,6 +16,7 @@ class Solution {
             if(set.contains(str.toString())){
                 if(solve(j+1,s,set)){
                     ans=true;
+                    break;
                 }
             }
         }
