@@ -1,13 +1,9 @@
 class Solution {
     HashMap<Integer,Boolean>map=new HashMap<>();
     public boolean wordBreak(String s, List<String> wordDict) {
-        HashSet<String> set=new HashSet<>();
-        for(int i=0;i<wordDict.size();i++){
-            set.add(wordDict.get(i));
-        }
-        return solve(0,s,set);
+        return solve(0,s,wordDict);
     }
-    public boolean solve(int i,String s,HashSet<String> set){
+    public boolean solve(int i,String s,List<String> set){
         if(i==s.length())
         return true;
         if(map.containsKey(i)){
@@ -20,7 +16,6 @@ class Solution {
             if(set.contains(str.toString())){
                 if(solve(j+1,s,set)){
                     ans=true;
-                    // break;
                 }
             }
         }
