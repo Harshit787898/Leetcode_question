@@ -1,5 +1,5 @@
 class Solution {
-    HashMap<String,Integer> map=new HashMap<>();
+      HashMap<String,Integer> map=new HashMap<>();
     public int zeros(String s){
         int c=0;
         for(int i=0;i<s.length();i++){
