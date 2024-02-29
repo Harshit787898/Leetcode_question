@@ -9,18 +9,17 @@ class Solution {
         if(map.containsKey(i)){
             return map.get(i);
         }
-        boolean ans=false;
         StringBuilder str=new StringBuilder();
         for(int j=i;j<s.length();j++){
             str.append(s.charAt(j));
             if(set.contains(str.toString())){
                 if(solve(j+1,s,set)){
-                    ans=true;
-                    break;
+                    map.put(i,true);
+                    return map.get(i);
                 }
             }
         }
-        map.put(i,ans);
+        map.put(i,false);
         return map.get(i);
     }
 }
