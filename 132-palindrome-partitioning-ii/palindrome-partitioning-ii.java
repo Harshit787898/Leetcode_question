@@ -9,7 +9,7 @@ class Solution {
         }
         return true;
     }
-    public int solve(int i,int j,String s){
+    public int solve(int i,String s){
         if(i==s.length())
         return -1;
         if(map.containsKey(i))
@@ -18,7 +18,7 @@ class Solution {
             int ans = Integer.MAX_VALUE;
             for (int k = i; k < s.length(); k++) {
                 if (isPalin(i, k, s)) {
-                    int cuts =1 + solve(k + 1, j, s);
+                    int cuts =1 + solve(k + 1, s);
                     ans = Math.min(ans, cuts);
                 }
             }
@@ -27,6 +27,6 @@ class Solution {
         }
     }
     public int minCut(String s) {
-        return solve(0,s.length()-1,s);
+        return solve(0,s);
     }
 }
