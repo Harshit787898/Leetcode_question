@@ -8,11 +8,15 @@ class Solution {
         StringBuilder ans = new StringBuilder();
         for (int i = 0; i < order.length(); i++) {
             char c = order.charAt(i);
-            while (temp.containsKey(c) && temp.get(c) > 0) {
+            while (temp.containsKey(c)) {
+                if(temp.get(c)==0)
+                break;
                 ans.append(c);
                 temp.put(c, temp.get(c) - 1);
             }
         }
+        if(temp.size()==0)
+        return ans.toString();
         for (char c : temp.keySet()) {
             int count = temp.get(c);
             while (count-- > 0) {
