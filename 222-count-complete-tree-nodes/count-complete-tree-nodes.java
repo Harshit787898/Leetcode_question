@@ -17,6 +17,8 @@ class Solution {
     public int solve(TreeNode root){
         if(root==null)
         return 0;
+        if(root.left==null&&root.right==null)
+        return 1;
         else{
             return 1+solve(root.left)+solve(root.right); 
         }
