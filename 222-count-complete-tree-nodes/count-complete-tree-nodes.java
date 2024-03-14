@@ -20,7 +20,9 @@ class Solution {
         if(root.left==null&&root.right==null)
         return 1;
         else{
-            return 1+solve(root.left)+solve(root.right); 
+            int l=solve(root.left);
+            int r=solve(root.right); 
+            return 1+l+r;
         }
     }
     public int countNodes(TreeNode root) {
