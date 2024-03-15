@@ -32,7 +32,6 @@ class Solution {
     public String smallestFromLeaf(TreeNode root) {
         solve(root,"");
         Collections.sort(temp);
-        System.out.println(temp);
         return temp.get(0);
     }
 }
