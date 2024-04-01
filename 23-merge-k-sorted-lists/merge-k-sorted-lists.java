@@ -44,6 +44,7 @@ class Solution {
         }
         ListNode res=lists[0];
         for(int i=1;i<lists.length;i++){
+            if(lists[i]!=null)
             res=merge(res,lists[i]);
         }
         return res;
