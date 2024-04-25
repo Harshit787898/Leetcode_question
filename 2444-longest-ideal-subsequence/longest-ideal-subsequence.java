@@ -1,7 +1,6 @@
 class Solution {
     int [][]dp;
     public int solve(String s,int k,int i,char p){
-        String temp=i+" "+p;
         if(i>=s.length()){
             return 0;
         }
