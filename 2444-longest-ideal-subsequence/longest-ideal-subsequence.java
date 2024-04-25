@@ -9,11 +9,10 @@ class Solution {
         }
         else{
             char ch=s.charAt(i);
-            int ans=0;
             if(p==(char)96||Math.abs(ch-p)<=k){
-                ans=Math.max(1+solve(s,k,i+1,ch),ans);
+                dp[i][p+1-'a']=Math.max(1+solve(s,k,i+1,ch),dp[i][p+1-'a']);
             }
-            dp[i][p+1-'a']=Math.max(ans,solve(s,k,i+1,p));
+            dp[i][p+1-'a']=Math.max(dp[i][p+1-'a'],solve(s,k,i+1,p));
             return dp[i][p+1-'a'];
         }
     }
