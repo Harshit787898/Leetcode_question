@@ -18,7 +18,7 @@ class Solution {
     public String getHappyString(int n, int k) {
         StringBuilder str = new StringBuilder();
         permute(str, n);
-        Collections.sort(powerset);
+        // Collections.sort(powerset);
         return (k <= powerset.size()) ? powerset.get(k - 1) : "";
     }
 }
