@@ -5,7 +5,7 @@ class Solution {
             if(s.charAt(i)=='.')
             break;
             else{
-                val=val*10+(s.charAt(i)-'0');
+                val=val*10+Integer.parseInt(String.valueOf(s.charAt(i)));
             }
             i++;
         }
