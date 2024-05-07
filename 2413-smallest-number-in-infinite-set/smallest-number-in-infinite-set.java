@@ -14,7 +14,7 @@ class SmallestInfiniteSet {
     
     public void addBack(int num) {
         if(!pq.contains(num))
-        pq.add(num);
+            pq.add(num);
     }
 }
 
