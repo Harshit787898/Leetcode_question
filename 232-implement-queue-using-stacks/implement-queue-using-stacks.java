@@ -1,7 +1,7 @@
 class MyQueue {
    int q[],f,r;
     public MyQueue() {
-        q=new int[200];
+        q=new int[101];
         f=0;
         r=0;
     }
