@@ -11,7 +11,6 @@ class Solution {
         while(pq.size()!=0){
             int sc=pq.poll();
             int in=0;
-            if(map.containsKey(sc))
             in=map.get(sc);
             if(pos>3){
                 ans[in]=pos+"";
