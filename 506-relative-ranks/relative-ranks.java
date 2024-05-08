@@ -10,8 +10,7 @@ class Solution {
         int pos=1;
         while(pq.size()!=0){
             int sc=pq.poll();
-            int in=0;
-            in=map.get(sc);
+            int in=map.get(sc);
             if(pos>3){
                 ans[in]=pos+"";
             }else{
