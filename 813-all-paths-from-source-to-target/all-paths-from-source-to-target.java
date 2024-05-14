@@ -1,5 +1,8 @@
 class Solution {
     public void solve(int[][]graph,List<Integer> path,List<List<Integer>>paths,int i,int j){
+        if(i==0){
+            path.add(0);
+        }
         if(i==j){
             paths.add(new ArrayList(path));
         }
@@ -14,7 +17,6 @@ class Solution {
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         List<List<Integer>> paths=new ArrayList<>();
         List<Integer> path=new ArrayList<>();
-        path.add(0);
         solve(graph,path,paths,0,graph.length-1);
         return paths;
     }
