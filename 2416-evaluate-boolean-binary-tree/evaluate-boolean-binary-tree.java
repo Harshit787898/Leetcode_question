@@ -15,9 +15,6 @@
  */
 class Solution {
     public boolean solve(TreeNode root){
-        if(root==null){
-            return true;
-        }
         if(root.left==null&&root.right==null){
             return root.val==1?true:false;
         }
