@@ -6,7 +6,6 @@ class Solution:
             if num == 0:
                 ans = max(ans, 0)
                 p = 1
-                continue
             else:
                 p *= num
                 ans = max(num, max(p, ans))
@@ -15,7 +14,6 @@ class Solution:
             if num == 0:
                 ans = max(ans, 0)
                 p = 1
-                continue
             else:
                 p *= num
                 ans = max(num, max(p, ans))
