@@ -31,23 +31,18 @@ class Solution {
     }
     public int[] decrypt(int[] code, int k) {
         int ans[]=new int[code.length];
-        if(k==0){
-            for(int i=0;i<code.length;i++){
-                ans[i]=0;
-            }
-            return ans;
-        }
-        else if(k>0){
+        if(k>0){
             for(int i=0;i<code.length;i++){
                 ans[i]=sumg(code,i,k);
             }
             return ans;
         }
-        else{
+        else if(k<0){
             for(int i=0;i<code.length;i++){
                 ans[i]=suml(code,i,k*(-1));
             }
             return ans;
         }
+        return ans;
     }
 }
