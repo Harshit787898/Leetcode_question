@@ -18,7 +18,7 @@ class Solution {
             for(char c='a';c<='z';c+=1){
                 if(l.containsKey(c)){
                     if(l.get(c)>0 && r.get(c)>0){
-                        set.add(c+","+ch);
+                        set.add(ch+","+c+","+ch);
                     }
                 }
             }
